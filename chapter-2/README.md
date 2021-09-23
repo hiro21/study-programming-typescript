@@ -35,3 +35,30 @@ Typescriptプロジェクトのルートに配置するファイル。これは�
 上記以外にもオプションがあり、公式の以下を参照すること。
 https://www.typescriptlang.org/docs/handbook/compiler-options.html
 
+##### tsconfig.jsonを生成する方法
+以下のコマンドで雛形を作成することが可能である。
+```
+npx tsc --init
+```
+
+### tslint.json（非推奨なのでこれは使わない）
+Typescript用のlintの設定であるが2019年に非推奨になった。
+代替方法としてJavaScript用のlintである、ESLintをTypeScript用のプラグインとともに使う方法があるようである。
+ここではその方法を使う。
+
+### ESLint
+lintとしてESLintを、TypeScript用のプラグインを使うことでTypeScriptのリンターとして使えるようになる。
+※ESLintはJavaScript用のリンターである。
+
+#### 設定方法
+##### 必要なパッケージのインストール
+以下のコマンドでインストールする。
+```
+npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```
+上記でインストールしているものは以下の役割がある。
+|パッケージ名|役割|
+|----------|----|
+|eslint|ESLintのパッケージ|
+|@typescript-eslint/eslint-plugin|EsLintのTypeScript用プラグイン|
+|@typescript-eslint/parser|TypeScriptをESLintが理解できるようにパースする|
