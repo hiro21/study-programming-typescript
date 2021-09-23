@@ -12,5 +12,26 @@ npm init
 ```
 npm install --save-dev typescript tslint @types/node
 ```
+### tsconfig.json
+Typescriptプロジェクトのルートに配置するファイル。これは必ず配置するもの。
+#### tsconfig.jsonにかかれていること
+以下のようなことを定義するものである。
+* どのファイルをコンパイルするか
+* コンパイル結果をどのディレクトリに格納するか
+* どのバージョンのJavaScriptを出力するか
 
+#### tsconfig.jsonのオプション
+以下のようなオプションがある。
+
+|オプション|説明|
+|--------|----|
+|include|TSCがTypeScriptファイルを見るけるためにどのフォルダを探すべきか？|
+|lib|TODO|
+|module|TODO|
+|outDir|生成するJavaScriptファイルのコードをTSCがどのフォルダに格納するか？|
+|strict|コードをチェックするときにできるだけ厳格にチェックする。これは必須でやったほうが良さそうである|
+|target|TSCがどのJavaScriptバージョンにコンパイルするか？|
+
+上記以外にもオプションがあり、公式の以下を参照すること。
+https://www.typescriptlang.org/docs/handbook/compiler-options.html
 
