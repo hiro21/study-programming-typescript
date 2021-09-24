@@ -62,3 +62,36 @@ npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
 |eslint|ESLintのパッケージ|
 |@typescript-eslint/eslint-plugin|EsLintのTypeScript用プラグイン|
 |@typescript-eslint/parser|TypeScriptをESLintが理解できるようにパースする|
+
+## 実装
+ここから実際にコードを書いていく
+
+### index.ts
+
+#### 配置場所
+以下にindex.tsを配置する
+
+`src/index.ts`
+
+#### 実装内容
+今回はhelloする内容とするので以下を書くのみ。
+```
+console.log("Hello!")
+```
+
+#### コンパイル
+TSCでコンパイルする
+```
+./node_modules/.bin/tsc
+```
+
+#### コードの実行
+Node.jsを使ってコードを実行する。
+```
+node ./dist/index.js
+```
+##### 実行結果
+コンソールに以下が表示されればOK。
+```
+Hello!
+```
