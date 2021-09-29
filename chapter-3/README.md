@@ -32,3 +32,36 @@ JavaScriptの最近の大きな改訂の1つ(ES2015)で導入されたもの。
   * Symbol.iterator
 * オブジェクトがなにかのインスタンスであるかを実行時にオーバーライドする
   * Symbpl.hasInstance
+
+ ## object
+ TYpeScriptでは型を使ってオブジェクトを表現する方法がいくつかある。
+
+### 値をobjectとして宣言する
+以下はobjectTest1をobjectとして定義した実装である。
+`objectTest1.a`としたときにエラーが発生しこのままでは使えない。
+```
+let objectTest1: object = {
+    a: 'x'
+}
+// aにアクセスしようとするが以下のエラーがでる
+// [ts] プロパティ 'a' は型 'object' に存在しません。
+objectTest1.a
+```
+
+これはanyよりは限定的になっているが、実際はほぼ同じ意味である。
+つまりはJavaScriptのオブジェクトであり、nullでないことを伝えているのみである。
+
+### オブジェクリテラル表記
+以下のように型をTypeScriptに推測させるようにする方法である。
+```
+let objectTest2 = {
+    b: 'x'
+}
+```
+
+もしくは以下のように型を明示的に記述することもできる
+```
+let objectTest4: {b: number} = {
+    b: 12
+}
+```
