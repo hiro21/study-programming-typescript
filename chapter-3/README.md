@@ -108,3 +108,30 @@ type Person = {
 以下のような用途がある。
 - 繰り返される複雑な型をDRYに書くこと。
 - ある変数がなにの目的で使われているかを明確にするため。
+
+### 合併型,交差型
+#### 定義
+##### 前提事項
+AとBの２つがある場合を想定
+
+##### 内容
+合併(union)とはそれらの和(A,B,またはその両方に含まれるすべてのもの)を指す。
+交差(intersection)とはそれらが共通して持つもの(AとBの両方に含まれるすべてのもの)を指す。
+
+###### 集合の考え方
+- union = 和集合のもの
+- interssection = 積
+
+#### TypeScriptのコード
+合併と交差を表現するための特別な型演算子が用意されている。
+- 合併 = |
+- 交差 = &
+
+```
+type Cat = {name: string, purrs: boolean}
+type Dog = {name: string, barks: boolean, wags: boolean}
+// これが合併(union)
+type CatOrDogOrBoth = Cat | Dog
+// これが交差(intersection)
+type CatAndDog = Cat & Dog
+```
